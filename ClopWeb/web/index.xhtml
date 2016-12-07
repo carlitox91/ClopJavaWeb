@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Registro Nuevo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+    </h:head>
+    <h:body>
+        
+        <f:view>
+        <h:form>
+            <p:fieldset legend="Datos Personales">
+                
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nombre " for="nombre" />
+                    <p:inputText id="nombre" value="#{personaController.persona.usuNombre}" required="true" requiredMessage="Debe ingresar un nombre valido"/>
+                    <p:outputLabel value="Apellido " for="apellido" />
+                    <p:inputText id="apellido" value="#{personaController.persona.usuApellido}" required="true" requiredMessage="Debe ingresar un apellido valido"/>
+                    <p:outputLabel value="Genero " for="genero" />
+                    <p:selectOneRadio id='genero' value="#{personaController.persona.usuGenero}" required="true" requiredMessage="Debe ingresar un genero">
+                        <f:selectItem itemLabel="Masculino" itemValue="M" />
+                        <f:selectItem itemLabel="Femenino" itemValue="F" />
+                    </p:selectOneRadio>
+                    <p:outputLabel value="Fecha de Nacimiento " for="fenacimiento" />
+                    <p:calendar id="fenacimiento" value="#{personaController.persona.usuGenero}"  mode="popup" showOn="button" 
+                                locale="es" navigator="true" showButtonPanel="true" mindate="01/01/1940" yearRange="c-180:c+12" required="true" requiredMessage="Debe seleccionar una fecha valida"/>
+                    <p:outputLabel value="Ciudad de residencia " for="ciudad" />
+                    <p:inputText id="ciudad" value="#{personaController.persona.usuCiudadResidencia}" required="true" requiredMessage="Debe ingresar una ciudad"/>
+                    <p:outputLabel value="Direccion " for="direccion" />
+                    <p:inputText id="direccion" value="#{personaController.persona.usuDireccion}" required="true" requiredMessage="Debe ingresar direccion"/>
+                    <p:outputLabel value="Telefono " for="tel" />
+                    <p:inputText id="tel" value="#{personaController.persona.usuTelFijo}" required="true" requiredMessage="Debe ingresar un telefono"/>
+                    <p:outputLabel value="Celular " for="cel" />
+                    <p:inputText id="cel" value="#{personaController.persona.usuTelCelular}" required="true" requiredMessage="Debe ingresar un celular"/>
+                </p:panelGrid>
+           </p:fieldset>
+    
+                <p:commandButton value="Registrar" actionListener="#{personaController.registrar()}" id="iconOnly"  icon="ui-icon-check" />
+            
+        </h:form>
+        </f:view>
+        <h:outputScript library="js" name="spanishLocale.js"/>
+    </h:body>
+</html>
+
