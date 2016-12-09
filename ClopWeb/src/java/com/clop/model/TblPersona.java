@@ -32,16 +32,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "tbl_persona")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "TblPersona.findAll", query = "SELECT t FROM TblPersona t"),
-    @NamedQuery(name = "TblPersona.findByIDPersona", query = "SELECT t FROM TblPersona t WHERE t.iDPersona = :iDPersona"),
-    @NamedQuery(name = "TblPersona.findByUsuNombre", query = "SELECT t FROM TblPersona t WHERE t.usuNombre = :usuNombre"),
-    @NamedQuery(name = "TblPersona.findByUsuApellido", query = "SELECT t FROM TblPersona t WHERE t.usuApellido = :usuApellido"),
-    @NamedQuery(name = "TblPersona.findByUsuGenero", query = "SELECT t FROM TblPersona t WHERE t.usuGenero = :usuGenero"),
-    @NamedQuery(name = "TblPersona.findByUsuFechaNacimiento", query = "SELECT t FROM TblPersona t WHERE t.usuFechaNacimiento = :usuFechaNacimiento"),
-    @NamedQuery(name = "TblPersona.findByUsuCiudadResidencia", query = "SELECT t FROM TblPersona t WHERE t.usuCiudadResidencia = :usuCiudadResidencia"),
-    @NamedQuery(name = "TblPersona.findByUsuDireccion", query = "SELECT t FROM TblPersona t WHERE t.usuDireccion = :usuDireccion"),
-    @NamedQuery(name = "TblPersona.findByUsuTelFijo", query = "SELECT t FROM TblPersona t WHERE t.usuTelFijo = :usuTelFijo"),
-    @NamedQuery(name = "TblPersona.findByUsuTelCelular", query = "SELECT t FROM TblPersona t WHERE t.usuTelCelular = :usuTelCelular")})
+    @NamedQuery(name = "TblPersona.findAll", query = "SELECT t FROM TblPersona t")
+    , @NamedQuery(name = "TblPersona.findByIDPersona", query = "SELECT t FROM TblPersona t WHERE t.iDPersona = :iDPersona")
+    , @NamedQuery(name = "TblPersona.findByUsuNombre", query = "SELECT t FROM TblPersona t WHERE t.usuNombre = :usuNombre")
+    , @NamedQuery(name = "TblPersona.findByUsuApellido", query = "SELECT t FROM TblPersona t WHERE t.usuApellido = :usuApellido")
+    , @NamedQuery(name = "TblPersona.findByUsuGenero", query = "SELECT t FROM TblPersona t WHERE t.usuGenero = :usuGenero")
+    , @NamedQuery(name = "TblPersona.findByUsuFechaNacimiento", query = "SELECT t FROM TblPersona t WHERE t.usuFechaNacimiento = :usuFechaNacimiento")
+    , @NamedQuery(name = "TblPersona.findByUsuCiudadResidencia", query = "SELECT t FROM TblPersona t WHERE t.usuCiudadResidencia = :usuCiudadResidencia")
+    , @NamedQuery(name = "TblPersona.findByUsuDireccion", query = "SELECT t FROM TblPersona t WHERE t.usuDireccion = :usuDireccion")
+    , @NamedQuery(name = "TblPersona.findByUsuTelFijo", query = "SELECT t FROM TblPersona t WHERE t.usuTelFijo = :usuTelFijo")
+    , @NamedQuery(name = "TblPersona.findByUsuTelCelular", query = "SELECT t FROM TblPersona t WHERE t.usuTelCelular = :usuTelCelular")})
 public class TblPersona implements Serializable {
 
     private static final long serialVersionUID = 1L;

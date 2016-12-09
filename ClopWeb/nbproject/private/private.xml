@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documents/NetBeansProjects/ClopWeb/web/index.xhtml</file>
-            <file>file:/D:/Documents/NetBeansProjects/ClopWeb/src/java/com/clop/controller/PersonaController.java</file>
-            <file>file:/D:/Documents/NetBeansProjects/ClopWeb/src/java/com/clop/model/TblPersona.java</file>
-            <file>file:/D:/Documents/NetBeansProjects/ClopWeb/src/java/com/clop/ejb/TblPersonaFacadeLocal.java</file>
-            <file>file:/D:/Documents/NetBeansProjects/ClopWeb/web/resources/js/spanishLocale.js</file>
+            <file>file:/D:/Documents/GitHub/ClopJavaWeb/ClopWeb/web/index.xhtml</file>
+            <file>file:/D:/Documents/GitHub/ClopJavaWeb/ClopWeb/src/conf/persistence.xml</file>
         </group>
     </open-files>
 </project-private>
