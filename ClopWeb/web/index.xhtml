@@ -18,54 +18,58 @@
                 
                 <p:panelGrid columns="3" id="datos">
                     <p:outputLabel value="Nombre " for="nombre" />
-                    <p:inputText id="nombre" value="#{personaController.persona.usuNombre}" required="true" requiredMessage="Debe ingresar un nombre valido"/>
+                    <p:inputText id="nombre" value="#{usuarioController.persona.usuNombre}" required="true" requiredMessage="Debe ingresar un nombre valido"/>
                     <p:message for="nombre" />
                     
                     <p:outputLabel value="Apellido " for="apellido" />                    
-                    <p:inputText id="apellido" value="#{personaController.persona.usuApellido}" required="true" requiredMessage="Debe ingresar un apellido valido"/>
+                    <p:inputText id="apellido" value="#{usuarioController.persona.usuApellido}" required="true" requiredMessage="Debe ingresar un apellido valido"/>
                     <p:message for="apellido" />
                     
                     <p:outputLabel value="Genero " for="genero" />
-                    <p:selectOneRadio id='genero' value="#{personaController.persona.usuGenero}" required="true" requiredMessage="Debe ingresar un genero">
+                    <p:selectOneRadio id='genero' value="#{usuarioController.persona.usuGenero}" required="true" requiredMessage="Debe ingresar un genero">
                         <f:selectItem itemLabel="Masculino" itemValue="M" />
                         <f:selectItem itemLabel="Femenino" itemValue="F" />
                     </p:selectOneRadio>
                     <p:message for="genero" />
                     
                     <p:outputLabel value="Fecha de Nacimiento " for="fenacimiento" />
-                    <p:calendar id="fenacimiento" value="#{personaController.persona.usuGenero}"  mode="popup" showOn="button" 
+                    <p:calendar id="fenacimiento" value="#{usuarioController.persona.usuGenero}"  mode="popup" showOn="button" 
                                 locale="es" navigator="true" showButtonPanel="true" mindate="01/01/1940" yearRange="c-180:c+12" required="true" requiredMessage="Debe seleccionar una fecha valida"/>
                     <p:message for="fenacimiento" />
                     
                     <p:outputLabel value="Ciudad de residencia " for="ciudad" />
-                    <p:inputText id="ciudad" value="#{personaController.persona.usuCiudadResidencia}" required="true" requiredMessage="Debe ingresar una ciudad"/>
+                    <p:inputText id="ciudad" value="#{usuarioController.persona.usuCiudadResidencia}" required="true" requiredMessage="Debe ingresar una ciudad"/>
                     <p:message for="ciudad" />
                     
                     <p:outputLabel value="Direccion " for="direccion" />
-                    <p:inputText id="direccion" value="#{personaController.persona.usuDireccion}" required="true" requiredMessage="Debe ingresar direccion"/>
+                    <p:inputText id="direccion" value="#{usuarioController.persona.usuDireccion}" required="true" requiredMessage="Debe ingresar direccion"/>
                     <p:message for="direccion" />
                     
                     <p:outputLabel value="Telefono " for="tel" />
-                    <p:inputText id="tel" value="#{personaController.persona.usuTelFijo}" required="true" requiredMessage="Debe ingresar un telefono"/>
+                    <p:inputText id="tel" value="#{usuarioController.persona.usuTelFijo}" required="true" requiredMessage="Debe ingresar un telefono"/>
                     <p:message for="tel" />
                     
                     <p:outputLabel value="Celular " for="cel" />
-                    <p:inputText id="cel" value="#{personaController.persona.usuTelCelular}" required="true" requiredMessage="Debe ingresar un celular"/>
+                    <p:inputText id="cel" value="#{usuarioController.persona.usuTelCelular}" required="true" requiredMessage="Debe ingresar un celular"/>
                     <p:message for="cel" />
-                </p:panelGrid>           
+                </p:panelGrid> 
+            </p:fieldset>    
              
-            <p:fieldset legend="Datos de la cuenta">
+                <p:fieldset legend="Datos de la cuenta"> 
                 <p:panelGrid columns="3" id="cuenta">
                 
                     <p:outputLabel for="usuario" value="Usuario"/>
-                    <p:inputText id="usuario" value="#{personaController.usuario.usuLogin}"
-                    
+                    <p:inputText id="usuario" value="#{usuarioController.usuario.usuLogin}"/>
+                    <p:message for="usuario" />
+                                 
                     <p:outputLabel for="clave1" value="Clave"/>
                     <p:password id="clave1" value="" required="true" validatorMessage="Las claves no coinciden." 
                                 weakLabel="Debil" goodLabel="Buena" strongLabel="Fuerte" match="clave2" feedback="true" promptLabel="Ingrese una clave" />
+                    <p:message for="clave1" />
                     
                     <p:outputLabel for="clave2" value="Clave"/>
-                    <p:password id="clave" required="true" />
+                    <p:password id="clave2" required="true" validatorMessage="Campo requerido."/>
+                    <p:message for="clave2" />
                 </p:panelGrid>
                 
                 <p:commandButton value="Registrar" actionListener="#{personaController.registrar()}" id="iconOnly"  icon="ui-icon-check" update="datos,cuenta"/>

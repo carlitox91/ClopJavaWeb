@@ -6,8 +6,10 @@
 package com.clop.controller;
 
 import com.clop.ejb.TblPersonaFacadeLocal;
+import com.clop.ejb.TblRolFacadeLocal;
 import com.clop.ejb.TblUsuarioFacadeLocal;
 import com.clop.model.TblPersona;
+import com.clop.model.TblRol;
 import com.clop.model.TblUsuario;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
@@ -23,12 +25,15 @@ import javax.inject.Named;
  */
 @Named
 @SessionScoped
-public class PersonaController implements Serializable {
+public class UsuarioController implements Serializable {
+    
     @EJB
     private TblPersonaFacadeLocal personaEJB;
     private TblUsuarioFacadeLocal usuarioEJB;
+    private TblRolFacadeLocal rolEJB;
     private TblPersona persona;
     private TblUsuario usuario;
+    private TblRol rol;
     
     
     @PostConstruct
@@ -52,6 +57,14 @@ public class PersonaController implements Serializable {
     public void setUsuario(TblUsuario usuario) {
         this.usuario = usuario;
     }
+
+    public TblRol getRol() {
+        return rol;
+    }
+
+    public void setRol(TblRol rol) {
+        this.rol = rol;
+    }
     
     
     
@@ -59,6 +72,7 @@ public class PersonaController implements Serializable {
         try{
             personaEJB.create(persona);
             usuarioEJB.create(usuario);
+            rolEJB.create(rol);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Se ha registrado correctamente"));
         }catch(Exception e){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "", "Se ha registrado correctamente"));
@@ -66,4 +80,5 @@ public class PersonaController implements Serializable {
     }
     
     
-}
+}   
+
